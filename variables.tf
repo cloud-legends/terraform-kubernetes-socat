@@ -4,7 +4,7 @@ variable "endpoint_name" {
   description = "Name of the destination you want to interface with"
 }
 
-variable "tcp_endpoint" {
+variable "endpoint" {
   type        = string
   default     = ""
   description = "Address to which socat should forward traffic"
