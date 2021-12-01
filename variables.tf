@@ -1,3 +1,9 @@
+variable "namespace" {
+  type        = string
+  default     = ""
+  description = "Name of the namespace in which the deployment should be placed"
+}
+
 variable "endpoint_name" {
   type        = string
   default     = ""
