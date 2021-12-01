@@ -35,7 +35,7 @@ resource "kubernetes_deployment" "socat_deploy" {
             # When having 1 connection active: 1818624 Bytes = 1.818624 MB
             limits = {
               cpu    = "100m"
-              memory = "100mi"
+              memory = "100Mi"
             }
             requests = {
               cpu    = "20m"
