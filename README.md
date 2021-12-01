@@ -2,6 +2,20 @@
 
 Cloud Legends terraform module for socat deployment in Kubernetes
 
+Usage:
+
+```hcl-terraform
+module "socat" {
+  source           = "git@github.com:cloud-legends/terraform-socat.git?ref=0.1"
+  endpoint_name    = "rds"
+  namespace        = "application_namespace"
+  endpoint         = "endpoint url"
+  destination_port = port number
+  source_port      = port number
+  protocol         = "TCP"
+}
+```
+
 ## Configuration:
 Simple terraform code that creates a Kubernetes deployment.
 The deployment consists of 1 pod based on alpine that runs socat 
