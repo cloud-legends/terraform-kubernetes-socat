@@ -4,10 +4,10 @@ variable "namespace" {
   description = "Name of the namespace in which the deployment should be placed"
 }
 
-variable "endpoint_name" {
+variable "deploy_suffix" {
   type        = string
   default     = ""
-  description = "Name of the destination you want to interface with"
+  description = "Name of the destination you want to interface with, this is added to the name to ensure a unique name for the deployment"
 }
 
 variable "endpoint" {
