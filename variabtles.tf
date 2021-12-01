@@ -1,3 +1,9 @@
+variable "endpoint_name" {
+  type        = string
+  default     = ""
+  description = "Name of the destination you want to interface with"
+}
+
 variable "tcp_endpoint" {
   type        = string
   default     = ""

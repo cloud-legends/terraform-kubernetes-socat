@@ -1,8 +1,8 @@
 resource "kubernetes_deployment" "socat_deploy" {
   metadata {
-    name      = "socat-proxy"
+    name      = "socat-proxy-${var.endpoint_name}"
     namespace = local.application_namespace
-    labels    = {
+    labels = {
       app = "socat"
     }
   }
@@ -28,7 +28,7 @@ resource "kubernetes_deployment" "socat_deploy" {
           image   = "alpine/socat"
           name    = "socat-proxy"
           command = ["/bin/sh"]
-          args    = ["-c","socat -d -d ${var.protocol}-LISTEN:${var.source_port},fork ${var.protocol}:${var.endpoint}:${var.destination_port}"]
+          args    = ["-c", "socat -d -d ${var.protocol}-LISTEN:${var.source_port},fork ${var.protocol}:${var.endpoint}:${var.destination_port}"]
           resources {
             #I've gone ahead and set some defaults for this, ram usage is already very minimal
             # When passively listening for connections: 1318912 Bytes = 1.3189119999999999 MB
@@ -42,12 +42,12 @@ resource "kubernetes_deployment" "socat_deploy" {
               memory = "50Mi"
             }
           }
-          
+
           port {
             # This is the port that will be available on the pod to accept a port forward.
             container_port = var.source_port
             protocol       = var.protocol
-          }  
+          }
         }
       }
     }
