@@ -1,6 +1,6 @@
 # Terraform-socat README
 
-Cloud Legends terraform module for socat deployment in Kubernetes
+Cloud Legends terraform module for [socat] (https://linux.die.net/man/1/socat) deployment in Kubernetes
 
 Usage:
 
