@@ -1,7 +1,7 @@
 resource "kubernetes_deployment" "socat_deploy" {
   metadata {
     name      = "socat-proxy-${var.endpoint_name}"
-    namespace = local.application_namespace
+    namespace = var.namespace
     labels = {
       app = "socat"
     }
