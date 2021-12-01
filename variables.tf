@@ -12,13 +12,11 @@ variable "tcp_endpoint" {
 
 variable "destination_port" {
   type        = number
-  default     = ""
   description = "Port to which socat should forward the traffic"
 }
 
 variable "source_port" {
   type        = number
-  default     = ""
   description = "port on which socat should listen for traffic"
 }
 
