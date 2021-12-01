@@ -1,7 +1,9 @@
 # Terraform-socat README
 
+Cloud Legends terraform module for socat deployment in Kubernetes
+
 ## Configuration:
-Simple terraform code that creates a deployment.
+Simple terraform code that creates a Kubernetes deployment.
 The deployment consists of 1 pod based on alpine that runs socat 
 
 Socat is configured to accept `TCP` or `UDP` traffic on an incoming port that is exposed on the pod
