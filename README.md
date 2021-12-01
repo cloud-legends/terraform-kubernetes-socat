@@ -7,7 +7,7 @@ Usage:
 ```hcl-terraform
 module "socat" {
   source           = "git@github.com:cloud-legends/terraform-socat.git?ref=0.1"
-  endpoint_name    = "rds"
+  deploy_suffix    = "rds"
   namespace        = "application_namespace"
   endpoint         = "endpoint url"
   destination_port = port number
@@ -27,4 +27,4 @@ It then forwards the traffic towards an endpoint of choice.
 You can port-forward to the resulting pod(s) using `kubectl` and use a local database client to interface with the endpoint even if a direct connection from your machine is not allowed in the network itself.
 
 ## visual representation:
-![](./_images/socat.png)
+![](./_images/socat.png)ß
