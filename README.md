@@ -6,7 +6,7 @@ Usage:
 
 ```hcl-terraform
 module "socat" {
-  source           = "git@github.com:cloud-legends/terraform-socat.git?ref=0.1"
+  source           = "git@github.com:cloud-legends/terraform-socat.git?ref=1.0"
   deploy_suffix    = "rds"
   namespace        = "application_namespace"
   endpoint         = "endpoint url"
