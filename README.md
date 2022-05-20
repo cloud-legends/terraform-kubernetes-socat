@@ -27,3 +27,42 @@ You can port-forward to the resulting pod(s) using `kubectl` and use a local dat
 
 ## visual representation:
 ![](./_images/socat.png)
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | n/a |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [kubernetes_deployment.socat_deploy](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/deployment) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_deploy_suffix"></a> [deploy\_suffix](#input\_deploy\_suffix) | Name of the destination you want to interface with, this is added to the name to ensure a unique name for the deployment | `string` | `""` | no |
+| <a name="input_destination_port"></a> [destination\_port](#input\_destination\_port) | Port to which socat should forward the traffic | `number` | n/a | yes |
+| <a name="input_endpoint"></a> [endpoint](#input\_endpoint) | Address to which socat should forward traffic | `string` | `""` | no |
+| <a name="input_namespace"></a> [namespace](#input\_namespace) | Name of the namespace in which the deployment should be placed | `string` | `""` | no |
+| <a name="input_protocol"></a> [protocol](#input\_protocol) | The protocol that socat should use, options are 'TCP' or 'UDP' | `string` | `"TCP"` | no |
+| <a name="input_source_port"></a> [source\_port](#input\_source\_port) | Port on which socat should listen for traffic | `number` | n/a | yes |
+
+## Outputs
+
+No outputs.
+<!-- END_TF_DOCS -->
