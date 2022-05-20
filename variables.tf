@@ -23,11 +23,11 @@ variable "destination_port" {
 
 variable "source_port" {
   type        = number
-  description = "port on which socat should listen for traffic"
+  description = "Port on which socat should listen for traffic"
 }
 
 variable "protocol" {
   type        = string
-  default     = ""
-  description = "the protocol that socat should use, options are 'TCP' or 'UDP'"
+  default     = "TCP"
+  description = "The protocol that socat should use, options are 'TCP' or 'UDP'"
 }
