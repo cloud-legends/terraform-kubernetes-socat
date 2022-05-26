@@ -22,7 +22,13 @@ The deployment consists of 1 pod based on alpine that runs socat
 
 Socat is configured to accept `TCP` or `UDP` traffic on an incoming port that is exposed on the pod
 It then forwards the traffic towards an endpoint of choice.
+## Result:
+You can port-forward to the resulting pod(s) using `kubectl` and use a local database client to interface with the endpoint even if a direct connection from your machine is not allowed in the network itself.
 
+## visual representation:
+![](./_images/socat.png)
+
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -34,6 +40,10 @@ It then forwards the traffic towards an endpoint of choice.
 | Name | Version |
 |------|---------|
 | <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | n/a |
+
+## Modules
+
+No modules.
 
 ## Resources
 
@@ -49,10 +59,10 @@ It then forwards the traffic towards an endpoint of choice.
 | <a name="input_destination_port"></a> [destination\_port](#input\_destination\_port) | Port to which socat should forward the traffic | `number` | n/a | yes |
 | <a name="input_endpoint"></a> [endpoint](#input\_endpoint) | Address to which socat should forward traffic | `string` | `""` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Name of the namespace in which the deployment should be placed | `string` | `""` | no |
-| <a name="input_protocol"></a> [protocol](#input\_protocol) | the protocol that socat should use, options are 'TCP' or 'UDP' | `string` | `""` | no |
-| <a name="input_source_port"></a> [source\_port](#input\_source\_port) | port on which socat should listen for traffic | `number` | n/a | yes |
-## Result:
-You can port-forward to the resulting pod(s) using `kubectl` and use a local database client to interface with the endpoint even if a direct connection from your machine is not allowed in the network itself.
+| <a name="input_protocol"></a> [protocol](#input\_protocol) | The protocol that socat should use, options are 'TCP' or 'UDP' | `string` | `"TCP"` | no |
+| <a name="input_source_port"></a> [source\_port](#input\_source\_port) | Port on which socat should listen for traffic | `number` | n/a | yes |
 
-## visual representation:
-![](./_images/socat.png)
+## Outputs
+
+No outputs.
+<!-- END_TF_DOCS -->
